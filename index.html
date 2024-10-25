@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla</title>
   </head>
+
   <body>
-    
+    <t name="Partner Details" t-name="website_partner.partner_detail">
+
+      <div id="ccbe-partner-info">
+
+        <div class="row">
+
+          <div class="col-12 col-lg-3 col-md-4">
+  
+            <!-- Avatar Usuario -->
+            <div class="border border-2 border-info" t-field="partner.avatar_1920" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;preview_image&quot;: &quot;avatar_1920&quot;, &quot;style&quot;: &quot;object-fit: cover&quot;, &quot;class&quot;: &quot;w-100 mb-2 rounded-3 border&quot;}"/>
+            
+            <!-- <div class="o_wcrm_contact_details d-none">
+              <div t-field="partner.self" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;website&quot;, &quot;phone&quot;, &quot;email&quot;] }" />
+              <t t-out="left_column or ''" />
+            </div> -->
+            
+          </div>
+  
+          <div class="col-12 col-lg-9 col-md-8">
+  
+            <div class="row align-items-center">
+              <div class="col-12 text-center py-4">
+                <h1 t-esc="partner.x_studio_nombre_publico"/>
+              </div>
+            </div>
+  
+            <div class="row align-items-center border border-2 border-info">
+              
+              <!-- Game ID -->
+              <div class="col-md-4">
+                
+                <div class="row text-start">
+                  <div class="col-12">
+                    <p>Game ID: </p>
+                  </div>
+                  <hr class="border border-2 border-info m-0 p-0" />
+                  <div class="col-12">
+                    <p t-esc="partner.x_studio_game_id"/>
+                  </div>
+                </div>
+  
+              </div>
+              
+              <!-- Rango -->
+              <div class="col-md-4 text-center border border-2 border-info">
+                <h2>Rango</h2>
+              </div>
+  
+              <!-- Fecha de Ingreso -->
+              <div class="col-md-4">
+  
+                <div class="row text-end">
+                  <div class="col-12">
+                    <p>Fecha de Ingreso</p>
+                  </div>
+                  <hr class="border border-2 border-info m-0 p-0" />
+                  <div class="col-12">
+                    <p t-esc="partner.x_studio_fecha_de_ingreso_1"/>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-12 col-lg-9 col-md-8 m-0 my-3 p-0 w-100">
+                <p class="px-2 border border-2 border-info" t-esc="partner.x_studio_rol"/>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="row border border-2 border-info mt-2">
+
+          <!-- Titulo -->
+          <div class="offset-md-4 offset-lg-3 col-md-8 col-lg-9 text-center">
+            <h2>Hoja De Servicio</h2>
+          </div>
+
+          <!-- Titulaciones -->
+          <div class="offset-md-4 offset-lg-3 col-md-8 col-lg-9 border border-2 border-info">
+            <h2>Titulaciones</h2>
+            <div class="o_partner_image_gallery">
+              <t t-if="partner.x_studio_many2many_field_6vn_1ib1vt3kp">
+                <t t-foreach="partner.x_studio_many2many_field_6vn_1ib1vt3kp" t-as="image">
+                  <div class="border border-2 border-info">
+                    <img t-att-src="'/web/image/%s/%s' % (image.id, 'image_1920')" t-att-alt="image.name" class="img-thumbnail m-2" style="max-width: 150px;"/>
+                  </div>
+                </t>
+              </t>
+              <t t-else="">
+                <p>No hay Titulaciones adjuntas.</p>
+              </t>
+            </div>
+          </div>
+
+          <!-- Condecoraciones -->
+          <div class="offset-md-4 offset-lg-3 col-md-8 col-lg-9 border border-2 border-info mt-3">
+            <h2>Condecoraciones</h2>
+            <div class="o_partner_image_gallery">
+              <t t-if="partner.x_studio_many2many_field_8ol_1ib2056de">
+                <t t-foreach="partner.x_studio_many2many_field_8ol_1ib2056de" t-as="image">
+                  <div class="border border-2 border-info">
+                    <img t-att-src="'/web/image/%s/%s' % (image.id, 'image_1920')" t-att-alt="image.name" class="img-thumbnail m-2" style="max-width: 150px;"/>
+                  </div>
+                </t>
+              </t>
+              <t t-else="">
+                <p>No hay Condecoraciones adjuntas.</p>
+              </t>
+            </div>
+          </div>
+  
+          <div class="col-12 col-lg-9 col-md-8">
+  
+            <t t-if="partner">
+              <div t-field="partner.website_description" class="mb-5"/>
+            </t>
+            
+            <t t-out="right_column or ''"/>
+  
+          </div>
+  
+        </div>
+
+      </div>
+
+    </t>
   </body>
+
 </html>
