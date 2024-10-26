@@ -1,29 +1,21 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  background-color: #000 !important;
-  main {
-    #wrap {
-      background-color: #000;
-    }
-  }
-}
+// Abstracts
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-p, span, a, h1, h2, h3, h4, h5, h6, i, b, u, strong {
-  margin: 0;
-  padding: 0;
-}
+// Base
+@import "base/reset";
 
-header#top {
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, .125);
-}
+// Components
+@import "components/buttons";
+@import "components/text";
 
-#ccbe-partner-info {
-  p, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 10px 0;
-    color: white;
-  }
-}
+// Pages
+@import "pages/form-recruitment-success";
+@import "pages/form-recruitment";
+
+// Themes
+@import "themes/css";
+@import "themes/odoo";
+
+// Vendors
+@import "vendors/bootstrap";

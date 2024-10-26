@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Reclutamiento CCBE</title>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='css/main.css' />
+  </head>
+  <body>
+    
+    <section id="ccbe-recruitment-form" class="ccbe ccbe-recruitment-form" style="background-image: linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.85)), url(https://ccbesc.es/web/image/1960-d9235fd1/bg-form-recruitment.webp);">
+      <div class="ccbe-container-fluid container">
+        <div class="ccbe-row row">
+          <div class="ccbe-col col-12">
+            <form id="ccbeRecruitmentFormControl" class="ccbe-col__recruitment-form needs-validation" novalidate>
+              <div class="form-group text-start">
+                <label for="nickname">Nickname</label>
+                <input type="text" class="form-control" id="nickname" name="nickname" aria-describedby="nicknameHelp" placeholder="Ingrese su Nickname" required>
+                <small id="nicknameHelp" class="form-text">El Nickname es tu nombre dentro de Star Citizen y/o Discord.</small>
+              </div>
+              <div class="form-group text-start">
+                <label for="rsiGameId">RSI Game ID</label>
+                <input type="text" class="form-control" id="rsiGameId" name="rsiGameId" aria-describedby="rsiGameIdHelp" placeholder="Ingrese su RSI Game ID" required>
+                <small id="rsiGameIdHelp" class="form-text">El RSI Game ID es tu ID dentro de la página de Roberts Space Industries.</small>
+              </div>
+              <div class="form-group text-start">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingrese su Correo Electrónico" required>
+                <small id="emailHelp" class="form-text">Ingrese el correo electrónico que tienes registrado en tu cuenta de RSI.</small>
+              </div>
+              <div class="form-group text-start">
+                <label for="subject">Asunto</label>
+                <textarea name="subject" class="form-control" id="subject" rows="3" placeholder="Cuéntanos un poco acerca de ti. Tus intereses in-Game, tus especialidades, lo que te gusta, lo que no te gusta y qué esperas hacer en CCBE." required></textarea>
+              </div>
+              <button data-tilt type="submit" class="btn btn-primary mt-3 text-start">Postularme a CCBE</button>
+            </form>
+            
+            <script>
+              document.getElementById("ccbeRecruitmentFormControl").addEventListener("submit", async function(e) {
+                e.preventDefault();
+                
+                // Validación de Bootstrap
+                if (!e.target.checkValidity()) {
+                  e.stopPropagation();
+                  e.target.classList.add('was-validated');
+                  return;
+                }
+                
+                // Recoger los datos del formulario
+                const nickname = e.target.nickname.value;
+                const rsiGameId = e.target.rsiGameId.value;
+                const email = e.target.email.value;
+                const subject = e.target.subject.value;
+
+                // URL del webhook de Discord
+                const webhookUrl = "https://discord.com/api/webhooks/1299762609507012793/3ZhE2yw8OxLV-HDilRAAv7PJytZ7pdypFumq2T25cPUeVN-tyUrlkd_om12o9c33D2Xx";
+
+                // Configuración del contenido en formato Markdown
+                const data = {
+                  content: `# Nueva Solicitud de Ingreso\n` +
+                           `### Nickname:\n- ${nickname}\n` +
+                           `### RSI GAME ID:\n- ${rsiGameId}\n` +
+                           `### Correo Electrónico:\n- ${email}\n` +
+                           `### Asunto:\n- ${subject}`
+                };
+
+                // Enviar los datos al webhook
+                try {
+                  await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                  });
+                  
+                  alert("Formulario enviado con éxito.");
+                  
+                  // Redirección a la nueva vista
+                  window.location.href = "https://ccbesc.es/formulario-de-postulacion/peticion-enviada"; // Reemplaza con la URL de la vista a la que quieres redirigir
+
+                } catch (error) {
+                  console.log("Error al enviar el formulario.");
+                }
+              });
+
+              // Script para Bootstrap validation
+              (function () {
+                'use strict';
+                var forms = document.querySelectorAll('.needs-validation');
+                Array.prototype.slice.call(forms).forEach(function (form) {
+                  form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              })();
+            </script>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='js/index.js'></script>
+  </body>
+</html>

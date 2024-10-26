@@ -1,0 +1,29 @@
+main {
+  button[type="submit"], a.btn {
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border-radius: 0px;
+    border-color: transparent;
+    clip-path: polygon(100% 0, 100% 75%, 92% 100%, 0 100%, 0 0);
+    // box-shadow: inset 0px 0px 5px $ccbe-mobiglass-border-color;
+    color: var(--ccbe-mobiglass-border-color);
+    transition: ease-in-out .3s all;
+    background-image: url("https://ccbesc.es/web/image/1954-f64bc314/bg-button.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: left;
+  
+    &:hover {
+      padding-right: 50px;
+      cursor: pointer;
+      color: var(--ccbe-mobiglass-border-color);
+      background-color: transparent;
+    }
+    &:focus {
+      background-color: transparent;
+      border-color: transparent;
+      color: var(--ccbe-mobiglass-border-color);
+    }
+  }
+}

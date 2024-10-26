@@ -1,0 +1,46 @@
+.ccbe-recruitment-form {
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #ccbeRecruitmentFormControl {
+    label {
+      text-transform: uppercase;
+      color: var(--ccbe-mobiglass-border-color);
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      display: block;
+      font-weight: bold;
+    }
+    input, textarea {
+      background-color: $ccbe-mobiglass-bg-color;
+      border-left: 0;
+      border-right: 0;
+      padding: 20px 20px;
+      border-color: $ccbe-mobiglass-border-color;
+      border-width: 2px;
+      box-shadow: $ccbe-mobiglass-box-shadow;
+      color: var(--ccbe-mobiglass-border-color);
+      border-radius: 15px;
+
+      &::placeholder {
+        color: var(--ccbe-mobiglass-border-color);
+      }
+    }
+
+    small {
+      color: rgba($ccbe-mobiglass-border-color, .75);
+      font-size: .75rem;
+      text-align: left;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+}
