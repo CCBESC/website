@@ -1,0 +1,158 @@
+<t name="Partner Details" t-name="website_partner.partner_detail"> 
+  <div class="row">
+      <div class="col-lg-3 col-md-4">
+          <div t-field="partner.avatar_1920" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;preview_image&quot;: &quot;avatar_1920&quot;, &quot;style&quot;: &quot;object-fit: cover&quot;, &quot;class&quot;: &quot;w-100 mb-2 rounded-3 border&quot;}"/>
+          <div class="o_wcrm_contact_details">
+              <div t-field="partner.self" t-options="{                     &quot;widget&quot;: &quot;contact&quot;,                     &quot;fields&quot;: [&quot;address&quot;, &quot;website&quot;, &quot;phone&quot;, &quot;email&quot;]                 }"/>
+              <t t-out="left_column or ''"/>
+          </div>
+      </div>
+      <div class="col-12 col-md-9" id="ccbe-partner-info">
+          <div class="d-flex align-items-center flex-wrap mb-4">
+              
+              <!--<div class="flex-grow-1 d-none">-->
+              <!--    <h1 id="partner_name" t-field="partner.display_name"/>-->
+              <!--</div>-->
+
+              <div class="row w-100">
+                <div class="col-12">
+                  <h1 class="h1">Información General</h1>
+                </div>
+              </div>
+
+              <div class="row w-100">
+                
+                <div class="col-6">
+                  <div class="row align-items-end">
+                    <div class="col-6">
+                      <h2>Nombre: </h2>
+                    </div>
+                    <div class="col-6">
+                      <p>Nombre del Partner CCBE</p>                  
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-6">
+                  <div class="row align-items-end">
+                    <div class="col-6">
+                      <h2>Game ID: </h2>
+                    </div>
+                    <div class="col-6">
+                      <p>Game ID del Partner CCBE</p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="row w-100">
+                
+                <div class="col-6">
+                  <div class="row align-items-end">
+                    <div class="col-6">
+                      <h2>Rol: </h2>
+                    </div>
+                    <div class="col-6">
+                      <p>Rol del Partner CCBE</p>                  
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-6">
+                  <div class="row align-items-end">
+                    <div class="col-6">
+                      <h2>Permiso: </h2>
+                    </div>
+                    <div class="col-6">
+                      <p>Permiso del Partner CCBE</p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="row w-100 pt-5">
+                <div class="col-12">
+                  <h2>Titulaciones</h2>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row w-100 pt-5">
+                <div class="col-12">
+                  <h2>Menciones Honorificas</h2>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="tag">
+                      <!-- <img src="/web/image/866-ad1b243e/image.png" alt="#" class="img img-fluid"> -->
+                      <p>Etiqueta con Imagen</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+          </div>
+          <t t-if="partner">
+              <div t-field="partner.website_description" class="mb-5"/>
+          </t>
+          <t t-out="right_column or ''"/>
+      </div>
+  </div>
+</t>
