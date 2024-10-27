@@ -10,11 +10,44 @@
   </head>
   <body>
 
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <section id="ccbe-partners" class="ccbe-partners">
+      <div class="ccbe-container-fluid container text-center" id="ccbe-partners-list">
+        <h1 class="ccbe-titlePage text-mobiglass pb-5">Miembros CCBE</h1>
+        <div class="ccbe-row row">
+          <!-- <t t-foreach="request.env['res.partner'].sudo().search([])" t-as="contact"> -->
+            <div class="ccbe-col col-md-2 col-6">
+              <div data-tilt="" class="ccbe-card card card-deck my-2">
+                <div class="ccbe-card__image">
+                  <!-- Convertimos los bytes de la imagen a una cadena base64 -->
+                  <img t-if="contact.image_1920" t-att-src="'data:image/png;base64,' + contact.image_1920.decode('utf-8')" class="ccbe-card-img-top img img-fluid w-100" alt="Imagen de Miembro CCBE" />
+                  <!-- Mostrar una imagen placeholder si no tiene imagen -->
+                  <img t-if="not contact.image_1920" src="https://ccbesc.es/web/image/1969-f6baff84/placeholder-image.webp" class="ccbe-card-img-top img img-fluid w-100" alt="No Image" />
+                </div>
+                <div class="ccbe-card__body w-100">
+                  <h5 class="ccbe-card__body--title text-center">
+                    <a t-att-href="'/partners/' + slug(contact)">
+                      <!-- <t t-esc="contact.name" /> -->
+                      Nombre
+                    </a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          <!-- </t> -->
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+      integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='js/index.js'></script>
   </body>
+
 </html>
