@@ -1,0 +1,6 @@
+.ccbe-text {
+  &-primary { color: var(--ccbe-primary-color) !important; }
+  &-secondary { color: var(--ccbe-tertiary-color) !important; }
+  &-tertiary { color: var(--ccbe-tertiary-color) !important; }
+  &-mobiglass { color: var(--ccbe-mobiglass-border-color) !important; }
+}

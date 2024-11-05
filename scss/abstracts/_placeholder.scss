@@ -1,0 +1,32 @@
+%btn-discord {
+  background-color: #5865f2;
+  width: auto;
+  min-width: 100%;
+  position: relative;
+  color: var(--ccbe-secondary-color);
+  border-radius: 50px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background-image: url("https://ccbesc.es/web/image/1982-37f72680/discord.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: unset;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 115px;
+    transform: translate(0%, -50%);
+  }
+}
+
+%mobiglass {
+  border-color:        var(--ccbe-mobiglass-border-color);
+  background-color:        var(--ccbe-mobiglass-bg-color);
+  box-shadow:            var(--ccbe-mobiglass-box-shadow);
+}

@@ -6,7 +6,6 @@ main {
     border-radius: 0px;
     border-color: transparent;
     clip-path: polygon(100% 0, 100% 75%, 92% 100%, 0 100%, 0 0);
-    // box-shadow: inset 0px 0px 5px $ccbe-mobiglass-border-color;
     color: var(--ccbe-mobiglass-border-color);
     transition: ease-in-out .3s all;
     background-image: url("https://ccbesc.es/web/image/1954-f64bc314/bg-button.png");
@@ -25,5 +24,11 @@ main {
       border-color: transparent;
       color: var(--ccbe-mobiglass-border-color);
     }
+  }
+}
+
+.btn {
+  &.btn-discord {
+    @extend %btn-discord;
   }
 }

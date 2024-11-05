@@ -1,28 +1,46 @@
 /* Variables */
 
-// Primaries
-$ccbe-primary-color:                                       #000000;
-$ccbe-secondary-color:                                     #ffffff;
-$ccbe-tertiary-color:                                      #c0943f;
+// Colors
+
+// Main
+$ccbe-primary-color:                                                                              #000000;
+$ccbe-secondary-color:                                                                            #ffffff;
+$ccbe-tertiary-color:                                                                             #c0943f;
 
 // Others
-$ccbe-mobiglass-border-color:                              #B6E5F9;
-$ccbe-mobiglass-bg-color:                     rgba(11, 19, 28, .5);
-$ccbe-mobiglass-box-shadow:    0px 0px 5px 0 rgba(255,255,255,.25);
+$ccbe-mobiglass-border-color:                                                                     #B6E5F9;
+$ccbe-mobiglass-bg-color:                                                            rgba(11, 19, 28, .5);
+$ccbe-mobiglass-box-shadow:                                           0px 0px 5px 0 rgba(255,255,255,.25);
+
+// Brands
+$ccbe-discord-bg-color:                                                                           #5865f2;
+$ccbe-youtube-bg-color:                                                                           #ff0000;
+$ccbe-facebook-bg-color:                                                                          #1877f2;
+$ccbe-whatsapp-bg-color:                                                                          #25d366;
+$ccbe-instagram-bg-color:     linear-gradient(45deg, #405de6, #833ab4, #e1306c, #f56040, #fcaf45);
+$ccbe-twitter-bg-color:                                                                           #1da1f2;
 
 /* Root */
-
 :root {
 
   // Primary
-  --ccbe-primary-color:                                    #000000;
-  --ccbe-secondary-color:                                  #ffffff;
-  --ccbe-tertiary-color:                                   #c0943f;
+  --ccbe-primary-color:                                                                           #000000;
+  --ccbe-secondary-color:                                                                         #ffffff;
+  --ccbe-tertiary-color:                                                                          #c0943f;
 
   // Other Colors
-  --ccbe-mobiglass-border-color:                           #B6E5F9;
-  --ccbe-mobiglass-bg-color:                  rgba(11, 19, 28, .5);
-  --ccbe-mobiglass-box-shadow: 0px 0px 5px 0 rgba(255,255,255,.25);
+  --ccbe-mobiglass-border-color:                                                                  #B6E5F9;
+  --ccbe-mobiglass-bg-color:                                                         rgba(11, 19, 28, .5);
+  --ccbe-mobiglass-box-shadow:                                    0px 0px 5px 0     rgba(255,255,255,.25);
+
+  // Brands
+  --ccbe-discord-bg-color:                                                                        #5865f2;
+  --ccbe-discord-bg-color:                                                                        #5865f2;
+  --ccbe-youtube-bg-color:                                                                        #ff0000;
+  --ccbe-facebook-bg-color:                                                                       #1877f2;
+  --ccbe-whatsapp-bg-color:                                                                       #25d366;
+  --ccbe-instagram-bg-color:  linear-gradient(45deg, #405de6, #833ab4, #e1306c, #f56040, #fcaf45);
+  --ccbe-twitter-bg-color:                                                                        #1da1f2;
 
 }
 
