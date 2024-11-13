@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='css/main.css' />
+    <title>INDEX - Video IAE 2954</title>
     <style>
       *, html, body {
         margin: 0;
@@ -13,8 +16,84 @@
     </style>
   </head>
   <body>
-    <video controls="" autoplay="" name="media">
-      <source width="100%" style="height: 100vh; width: 100%;" src="/assets/VIDEO/IAE-2954.mp4" type="video/mp4">
-    </video>
+    <main>
+      <section id="ccbe-iae-2954" class="ccbe ccbe-ia-2954 d-none d-md-block">
+        <video autoplay="" name="media" loop muted width="100%">
+          <source width="100%" style="height: 100vh; width: 100%;" src="https://robertsspaceindustries.com/media/r64p6so8iz5vur/source/IAE2400_SaveTheDate_CAR_Plus_H264_1920x860_241105.mp4#t=0" type="video/mp4">
+        </video>
+        <div class="ccbe-container container-fluid">
+          <div class="ccbe-row row">
+            <div class="ccbe-col col-12 text-center">
+
+              <img src="https://ccbesc.es/web/image/2040-cf42e4f1/iae-2954.webp" alt="iae-2954">
+              <p class="ccbe-col_p">Unete al 1er Evento de la <br /> <span>CONFEDERACIÓN COUSA NOUSTRA</span></p>
+              <div id="countdown"></div>
+              <a href="https://ccbesc.es/web/image/2043-e0fe9e98/IAEE-anuncio.webp" download="1ER-EVENTO-COUSA-NOUSTRA.webp" class="btn" target="_blank">MAS INFORMACIÓN</a>
+              <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=1er%20Evento%20Confedereacion%20Cousa%20Noustra%20-%20Star%20Citizen&amp;dates=20241122T160000Z/20241205T200000Z&amp;details=Una%20primera%20toma%20de%20contacto%20entre%20miembros%20confederados%20y%20también%20con%20la%20IAE%202954.%20Un%20evento%20%27chill%27%20para%20charlar%20y%20conocernos%20en%20un%20entorno%20inmejorable%20para%20explorar.&amp;location=Tobin%20Expo%20Center,%20New%20Babbage,%20microTech&amp;sprop=&amp;sprop=name:" class="btn" target="_blank">AGENDARME</a>
+            </div>
+          </div>
+        </div>
+        <script>
+
+          // Fecha y hora objetivo
+          const targetDate = new Date("2024-11-22T11:00:00").getTime();
+  
+          // Función para agregar un cero inicial si el valor es menor a 10
+          function addLeadingZero(num) {
+            return num < 10 ? "0" + num : num;
+          }
+  
+          // Función para actualizar la cuenta regresiva
+          function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+  
+            // Calcula los días, horas, minutos y segundos, agregando ceros iniciales si es necesario
+            const days = addLeadingZero(Math.floor(distance / (1000 * 60 * 60 * 24)));
+            const hours = addLeadingZero(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            const minutes = addLeadingZero(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            const seconds = addLeadingZero(Math.floor((distance % (1000 * 60)) / 1000));
+  
+            // Muestra el resultado
+            document.getElementById("countdown").innerHTML =
+              `<div class='row m-auto'>
+                <div class='col-3'>
+                  <div class='col-tm'>${days}</div>
+                  <div class='col-tm_info'>DIAS</div>
+                </div>
+                <div class='col-3'>
+                  <div class='col-tm'>${hours}</div>
+                  <div class='col-tm_info'>HRS</div>
+                </div>
+                <div class='col-3'>
+                  <div class='col-tm'>${minutes}</div>
+                  <div class='col-tm_info'>MIN</div>
+                </div>
+                <div class='col-3'>
+                  <div class='col-tm'>${seconds}</div>
+                  <div class='col-tm_info'>SEG</div>
+                </div>
+              </div>`;
+  
+            // Cuando se alcanza la fecha objetivo
+            if (distance < 0) {
+              clearInterval(interval);
+              document.getElementById("countdown").innerHTML = "¡Tiempo cumplido!";
+            }
+          }
+  
+          // Actualiza el countdown cada segundo
+          const interval = setInterval(updateCountdown, 1000);
+
+          document.getElementById("descargarImagen").addEventListener("click", function(event) {
+            event.preventDefault();
+            const link = document.createElement("a");
+            link.href = "https://ccbesc.es/web/image/2043-e0fe9e98/IAEE-anuncio.webp";
+            link.download = "mi-imagen.jpg";
+            link.click();
+          });
+        </script>
+      </section>
+    </main>
   </body>
 </html>
