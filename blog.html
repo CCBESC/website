@@ -1,0 +1,30 @@
+<div id="ccbe-first-article-blog" class="row">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Seleccionamos el primer artículo del blog
+      let firstArticle = document.querySelector("#o_wblog_posts_loop .row .col-12.col-md-6");
+
+      // Seleccionamos el contenedor de destino
+      let targetContainer = document.getElementById("ccbe-first-article-blog");
+
+      // Verificamos que ambos elementos existan
+      if (firstArticle && targetContainer) {
+
+        // Crear un nuevo contenedor .row si no existe dentro de #ccbe-first-article-blog
+        let rowContainer = targetContainer.querySelector(".row");
+        if (!rowContainer) {
+            rowContainer = document.createElement("div");
+            rowContainer.className = "row px-0 mx-0";
+            targetContainer.appendChild(rowContainer);
+        }
+
+        // Remover clases no deseadas y agregar "col-12"
+        firstArticle.classList.remove("col-md-6");
+        // firstArticle.classList.add("col-12");
+
+        // Mover el artículo dentro del nuevo contenedor .row
+        rowContainer.appendChild(firstArticle);
+      }
+    });
+  </script>
+</div>
