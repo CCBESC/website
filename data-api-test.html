@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV desde GitHub</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .imagen-miembro img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Info Miembros CCBE</h1>
+    <table id="miembros">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Nivel</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        async function fetchCSV() {
+            const url = "https://raw.githubusercontent.com/CCBESC/website/main/API/data.csv"; // URL del CSV
+            const response = await fetch(url);
+            const text = await response.text();
+            
+            // Convertir CSV a array de objetos
+            const rows = text.split("\n").map(row => row.split(","));
+            const headers = rows.shift().map(h => h.trim()); // Extraer encabezados y limpiar espacios
+
+            const data = rows.map(row => {
+                return headers.reduce((obj, header, index) => {
+                    obj[header] = row[index]?.trim(); // Evitar undefined si hay filas vacías
+                    return obj;
+                }, {});
+            });
+
+            renderTable(data);
+        }
+
+        function renderTable(data) {
+            const tbody = document.querySelector("#miembros tbody");
+            tbody.innerHTML = ""; // Limpiar tabla antes de insertar datos
+
+            data.forEach(item => {
+                if (item.NOMBRE) { // Evitar filas vacías
+                    const row = document.createElement("tr");
+
+                    row.innerHTML = `
+                        <td class="imagen-miembro"><img src="${item.IMG || 'https://via.placeholder.com/50'}" alt="img-member"></td>
+                        <td>${item.NOMBRE}</td>
+                        <td>${item.ROL}</td>
+                        <td>${item.NIVEL}</td>
+                    `;
+
+                    tbody.appendChild(row);
+                }
+            });
+        }
+
+        fetchCSV();
+    </script>
+</body>
+</html>
