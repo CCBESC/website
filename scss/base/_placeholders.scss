@@ -1,0 +1,28 @@
+
+:root {
+  --sb-track-color: transparent;
+  --sb-thumb-color: #4e828e;
+  --sb-size:          16px;
+}
+
+%scrollbar::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+%scrollbar-track::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 50px;
+}
+
+%scrollbar-thumb::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 50px;
+  border: 5px solid tra;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}

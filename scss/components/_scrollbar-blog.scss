@@ -1,0 +1,23 @@
+:root {
+  --sb-track-color: #DCF4FF;
+  --sb-thumb-color: #4e828e;
+  --sb-size:          5px;
+}
+
+.ccbe-rest-of-articles::-webkit-scrollbar,
+#wrap.js_blog.website_blog:has(#o_wblog_post_main)::-webkit-scrollbar {
+  width: 0;
+}
+
+.ccbe-rest-of-articles::-webkit-scrollbar-track,
+#wrap.js_blog.website_blog:has(#o_wblog_post_main)::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 50px;
+}
+
+.ccbe-rest-of-articles::-webkit-scrollbar-thumb,
+#wrap.js_blog.website_blog:has(#o_wblog_post_main)::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 50px;
+  border: 5px solid transparent;
+}

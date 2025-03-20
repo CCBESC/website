@@ -1,0 +1,27 @@
+.oe_website_login_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60vh;
+  margin-top: 4rem;
+  width: auto;
+  max-width: 1440px;
+  overflow: hidden;
+  background-color: rgba(77, 145, 178, 0.25);
+  border-radius: 25px;
+  border: var(--ccbe-mobiglass-border-color) 1px solid;
+  padding: 2rem;
+  min-width: 25rem;
+}
+
+li.o_no_autohide_item {
+  a.o_navlink_background_hover.btn.btn-sm.d-flex.align-items-center.h-100.rounded-0.border-0.border-start.px-3.text-reset.o_border_contrast {
+    border: 1px solid var(--ccbe-mobiglass-border-color) !important;
+    padding: 10px 20px !important;
+    height: auto !important;
+    color: var(--ccbe-secondary-color) !important;
+    background-color: var(--secondary-header-navbar-color);
+    border-radius: 10px !important;
+  }
+}

@@ -14,9 +14,24 @@ div#wrapwrap.homepage {
 #top {
   box-shadow: none !important;
   padding-top: 3rem;
+  position: fixed !important;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  width: 90%;
+  max-width: 1440px;
+
+  .o_header_hide_on_scroll.border-bottom.o_border_contrast {
+    .container.d-flex.justify-content-between.flex-wrap.w-100 {
+      max-width: 1440px;
+      padding: 0 !important;
+      margin: .25rem 0;
+    }
+  }
 
   .container.d-grid.align-items-start.w-100.py-2.o_grid_header_3_cols.justify-content-between {
     position: relative;
+    max-width: 1440px !important;
+    padding: 0 !important;
 
     &::after {
       content: "";
@@ -210,4 +225,13 @@ div#wrapwrap.homepage {
 
 .dropdown-toggle::after {
   color: var(--primary-header-navbar-color);
+}
+
+#wrapwrap.o_header_overlay > header:not(.o_header_affixed):not(.o_header_sidebar) {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  z-index: 1000;
+  transform: translateX(-50%) !important;
 }
