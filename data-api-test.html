@@ -32,16 +32,18 @@
             <tr>
                 <th>Imagen</th>
                 <th>Nombre</th>
-                <th>Rol</th>
-                <th>Nivel</th>
+                <th>Rango</th>
+                <th>Discord</th>
             </tr>
         </thead>
         <tbody></tbody>
     </table>
 
+    <!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSy21LW_CFFF1o4-7C3mj7Jo4Kf5UZRr2Q6KlOYEuyuR5bs8YkhJenKIU4ZJTJ5dRLwfe-oYmlzguLk/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
+
     <script>
         async function fetchCSV() {
-            const url = "https://raw.githubusercontent.com/CCBESC/website/main/API/data.csv"; // URL del CSV
+            const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSy21LW_CFFF1o4-7C3mj7Jo4Kf5UZRr2Q6KlOYEuyuR5bs8YkhJenKIU4ZJTJ5dRLwfe-oYmlzguLk/pub?gid=0&single=true&output=csv"; // URL del CSV
             const response = await fetch(url);
             const text = await response.text();
             
@@ -64,14 +66,14 @@
             tbody.innerHTML = ""; // Limpiar tabla antes de insertar datos
 
             data.forEach(item => {
-                if (item.NOMBRE) { // Evitar filas vacías
+                if (item.Nombre) { // Evitar filas vacías
                     const row = document.createElement("tr");
 
                     row.innerHTML = `
-                        <td class="imagen-miembro"><img src="${item.IMG || 'https://via.placeholder.com/50'}" alt="img-member"></td>
-                        <td>${item.NOMBRE}</td>
-                        <td>${item.ROL}</td>
-                        <td>${item.NIVEL}</td>
+                        <td>${item.Imagen}</td>
+                        <td>${item.Nombre}</td>
+                        <td>${item.Rango}</td>
+                        <td>${item.Discord}</td>
                     `;
 
                     tbody.appendChild(row);
