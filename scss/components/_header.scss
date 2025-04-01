@@ -84,6 +84,10 @@ div#wrapwrap.homepage {
       height: 10px;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
+      @media screen and (max-width: 991px) {
+        width: 80%;
+        left: 10%;
+      }
     }
     
     &::after {
@@ -98,6 +102,10 @@ div#wrapwrap.homepage {
       background-color: rgba(77, 145, 178, .25);
       z-index: 999;
       display: block;
+      @media screen and (max-width: 991px) {
+        width: 78%;
+        left: 8%;
+      }
     }
     
     a span {
@@ -131,6 +139,8 @@ div#wrapwrap.homepage {
   }
 
   .s_social_media.o_not_editable.oe_unmovable.oe_unremovable {
+    // Se pone display none por el momento, por que oficialmente CCBE no tiene redes sociales aun confiuradas
+    display: none;
     a {
       i, svg {
         color: #fff;

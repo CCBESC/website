@@ -226,6 +226,12 @@ div#wrapwrap.homepage {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+@media screen and (max-width: 991px) {
+  #top li.nav-item::before {
+    width: 80%;
+    left: 10%;
+  }
+}
 #top li.nav-item::after {
   content: "";
   position: absolute;
@@ -238,6 +244,12 @@ div#wrapwrap.homepage {
   background-color: rgba(77, 145, 178, 0.25);
   z-index: 999;
   display: block;
+}
+@media screen and (max-width: 991px) {
+  #top li.nav-item::after {
+    width: 78%;
+    left: 8%;
+  }
 }
 #top li.nav-item a span {
   color: #DCF4FF;
@@ -263,6 +275,9 @@ div#wrapwrap.homepage {
 }
 #o_main_nav li.dropdown.border-start.o_border_contrast.o_no_autohide_item a span::after {
   color: var(--primary-header-navbar-color) !important;
+}
+#o_main_nav .s_social_media.o_not_editable.oe_unmovable.oe_unremovable {
+  display: none;
 }
 #o_main_nav .s_social_media.o_not_editable.oe_unmovable.oe_unremovable a i, #o_main_nav .s_social_media.o_not_editable.oe_unmovable.oe_unremovable a svg {
   color: #fff;
@@ -368,8 +383,29 @@ header#top [aria-label=Mobile] .o_main_nav.container.flex-wrap.justify-content-b
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
+}
+header#top [aria-label=Mobile] .o_main_nav.container.flex-wrap.justify-content-between div#top_menu_collapse_mobile .offcanvas-body.d-flex.flex-column.justify-content-between.h-100.w-100 ul.navbar-nav ul.nav.navbar-nav.top_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap !important;
+}
+header#top [aria-label=Mobile] .o_main_nav.container.flex-wrap.justify-content-between div#top_menu_collapse_mobile .offcanvas-body.d-flex.flex-column.justify-content-between.h-100.w-100 ul.navbar-nav ul.nav.navbar-nav.top_menu li.nav-item {
+  width: auto;
+  min-width: 100px;
+  text-align: center;
+  height: auto;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+header#top [aria-label=Mobile] .o_main_nav.container.flex-wrap.justify-content-between div#top_menu_collapse_mobile .offcanvas-body.d-flex.flex-column.justify-content-between.h-100.w-100 ul.navbar-nav ul.nav.navbar-nav.top_menu li.nav-item a.nav-link {
+  padding: 10px;
+  margin: auto;
 }
 header#top [aria-label=Mobile] .o_main_nav.container.flex-wrap.justify-content-between .offcanvas-backdrop.fade.show {
   opacity: 1 !important;
